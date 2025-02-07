@@ -81,7 +81,7 @@ jobs:
           git commit -am "CI: Update gl4es"
           git push
           
-      - name: Get JRE8
+      - name: Get JDK8
         uses: dawidd6/action-download-artifact@v2
         with:
           github_token: ${{secrets.GITHUB_TOKEN}}
@@ -121,7 +121,6 @@ jobs:
         env:
           password: ${{ secrets.ELLIE_MINI_SECRET }}
         run: |
-          brew install openjdk@8
           brew install make ldid
           export PATH=/opt/procursus/bin:/opt/homebrew/bin:$PATH
           export RUNNER=1 SLIMMED=1
