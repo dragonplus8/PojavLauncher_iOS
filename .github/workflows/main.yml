@@ -116,6 +116,12 @@ jobs:
           repo: PojavLauncherTeam/android-openjdk-build-multiarch
           branch: buildjre17-21
           name: jre21-ios-aarch64
+          
+        - name: Set up JDK 8
+        uses: actions/setup-java@v2
+        with:
+          java-version: '8'
+          distribution: 'adoptopenjdk'
 
       - name: Build for ${{ matrix.platform_name }}
         env:
