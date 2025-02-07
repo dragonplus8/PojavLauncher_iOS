@@ -80,7 +80,21 @@ jobs:
           git add Natives/resources/Frameworks/libgl4es_114.dylib
           git commit -am "CI: Update gl4es"
           git push
-          
+
+      - name: Set up JDK 8
+        uses: actions/setup-java@v2
+        with:
+          java-version: '8'
+          distribution: 'adoptopenjdk'
+
+      - name: Set JAVA_HOME
+        run: |
+          echo "JAVA_HOME=$(/usr/libexec/java_home -v 1.8)" >> $GITHUB_ENV
+          echo "PATH=$JAVA_HOME/bin:$PATH" >> $GITHUB_ENV
+
+      - name: Verify JDK 8 installation
+        run: java -version
+        
       - name: Get JDK8
         uses: dawidd6/action-download-artifact@v2
         with:
