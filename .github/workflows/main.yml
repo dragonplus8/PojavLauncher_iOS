@@ -94,7 +94,7 @@ jobs:
           workflow_conclusion: success
           allow_forks: false
           repo: PojavLauncherTeam/android-openjdk-build-multiarch
-          branch: jre8-ios-jitjailed
+          branch: buildire8
           name: jre8-ios-aarch64
 
       - name: Get JRE17
@@ -106,7 +106,7 @@ jobs:
           workflow_conclusion: completed
           allow_forks: false
           repo: PojavLauncherTeam/android-openjdk-build-multiarch
-          branch: buildjre17
+          branch: buildjre17-21
           name: jre17-ios-aarch64
 
       - name: Get JRE21
@@ -118,7 +118,7 @@ jobs:
           workflow_conclusion: completed
           allow_forks: false
           repo: PojavLauncherTeam/android-openjdk-build-multiarch
-          branch: buildjre21
+          branch: buildjre17-21
           name: jre21-ios-aarch64
 
       - name: Build for ${{ matrix.platform_name }}
